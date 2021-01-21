@@ -1,0 +1,234 @@
+.container {
+  width: 100%;
+  height: auto;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+
+}
+.title{
+  display: flex;
+  height: 39px;
+  text-align: center;
+  font: normal normal bold 20px/39px Han Santteut Dotum;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  opacity: 1;
+  margin: 5px;
+}
+.login_wrap {
+  display: flex;
+  margin-left: 25px;
+}
+
+.login {
+  text-align: center;
+  font: normal normal bold 14px/26px Arial;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 0.4;
+  list-style: none;
+}
+
+
+.banner {
+  width: 100%;
+  height: 120px;
+  background-image: url("dog3.png");
+  background-size: cover;
+  opacity: 1;
+}
+.banner > div {
+  position: absolute;
+  width: 20%;
+  top: 16%;
+  left: 17%;
+  font: normal normal bold 20px/34px Arial;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+.header {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  background: white;
+}
+
+.main {
+  left: 15%;
+  width: 70%;
+  height: 100%;
+  background: white 0% 0% no-repeat padding-box;
+  opacity: 1;
+  position: relative;
+}
+
+.back {
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #efefef 0% 0% no-repeat padding-box;
+  opacity: 1;
+  filter: blur(undefined);
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  width: calc(1980px - 300px);
+  list-style: none;
+  font-size: 14px;
+}
+
+.nav > li {
+  margin-left: 25px;
+}
+
+.login_wrap > li {
+  margin-left: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: #707070;
+}
+
+select {
+  color: #ff8282;
+}
+
+#button_w {
+  background-color: #ff8282;
+  color: white;
+  border-color: #ff8282;
+  padding: 4px 10px;
+}
+
+#button_s {
+  background-color: white;
+  color: #ff8282;
+  border-color: white;
+}
+
+*{
+  margin:0;
+  padding: 0;
+  font-family: sans-serif;
+  cursor: auto;
+
+}
+
+.box {
+  background-color:"white";
+  top: 263px;
+  left: 320px;
+  width: 70%;
+  height: 662px;
+  border:1px solid;
+  margin: 0 auto;
+}
+
+.form {
+  width: 400px;
+  height: 490px;
+  position: relative;
+  margin: 6% auto;
+  background:#fff;
+  padding: 5px;
+  overflow:hidden;
+  border:1px #000000 solid;
+  border-radius: 10px;
+}
+
+.button-form{
+  width: 230px;
+  margin-left: 40px auto;
+  position: relative;
+  border-radius: 30px;
+
+}
+
+.toggleButton{
+  color: black;
+  padding:10px 30px;
+  background: transparent;
+  border:0;
+
+  outline:none;
+  position: relative;
+}
+
+#button{
+  top:0;
+  left:0;
+  position: absolute;
+  padding-right:2px;
+  width:110px;
+  height:10%;
+  background: #a4e1ab;
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.text2{
+  display: flex;
+  height: 39px;
+  text-align: center;
+  font: normal normal bold 20px/39px Han Santteut Dotum;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  opacity: 1;
+  margin: 5px;
+}
+.input-group{
+  top:180px;
+  position:absolute;
+  width:280px;
+  transition: .5s;
+}
+
+.input-field{
+  width: 100%;
+  padding:10px 0;
+  margin-left:10px;
+  margin-right:20px;
+  border: none;
+  border-bottom:1px solid #999;
+  text-align: center;
+  background: transparent;
+  outline: none;
+}
+
+.input-filed:focus{
+border-bottom: 1px #e677ff solid;
+}
+
+.submit{
+  width: 85%;
+  height: 45px;
+  padding:10px 30px;
+  color: white;
+  display: block;
+  margin-left: 32px;
+  background: #a4e1ab;
+  border:0;
+  outline:none;
+  border-radius:30px;
+  border:1px black solid;
+}
+span{
+  color:#777;
+  font-size:11px;
+  button:68px;
+  position:absolute;
+}
+#login{
+  left: -50px;
+
+}
+#register{
+  left: 450px;
+  top:25%;
+}

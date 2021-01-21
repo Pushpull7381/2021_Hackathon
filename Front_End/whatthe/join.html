@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="join.css">
+    <link rel="stylesheet" type="text/css" href="header2.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+          <div class="searchArea">
+            <form>
+              <a href="home.html"> <img class="img-logo" src="Logo.png"></a>
+
+
+
+            </form>
+          </div>
+
+          <ul class="nav">
+            <li id="learn"><a href="learn.html">LEARN</a></li>
+            <li><a href="level_page.html">LEVEL</a></li>
+            <li><a href="#">NOTICE</a></li>
+            <li><a href="#">COMMUNITY</a></li>
+            <li id="login2"><a href="#">LOGIN</a></li>
+            <li id="test_name"><a href="#">TEST_NAME</a></li>
+            <li><a href="Profile.html"><img src="Profile-ICon.png"></a></li>
+          </ul>
+
+        </div>
+        <div class="banner">
+            <div>
+              JOIN
+            </div>
+        </div>
+        <div class="box">
+          <div class="form">
+            <div class="button-from">
+              <div id="button"></div>
+              <button class="toggleButton" onclick="toggleLogin()">
+              <strong>LOGIN</strong></button>
+              <button class="toggleButton" onclick="toggleRegister()">
+              <strong>REGISTER</strong></button>
+            </div>
+            <div class="title" >
+                <div style="color:#FF6D6D">K</div>
+                <div style="color:#9F6969">N</div>
+                <div style="color:#F83C3C">O</div>
+                <div style="color:#790808">W</div>
+                <div style="color:white">!</div>
+                <div style="color:#91F079">A</div>
+                <div style="color:#389D53">N</div>
+                <div style="color:#426E45">I</div>
+                <div style="color:#6FE18A">M</div>
+                <div style="color:#5BD9AB">A</div>
+                <div style="color:#178455">L</div>
+            </div>
+            <form id="login2" class="input-group">
+              <input type="text"class="input-field" placeholder="Email">
+              <input type="password"class="input-field" placeholder="Password">
+              <br><br><br>
+              <button class="submit"><strong>LOGIN</strong></button>
+            </form>
+            <form id="register" class="input-group">
+              <input type="text"class="input-field" placeholder="Name">
+              <input type="text"class="input-field" placeholder="NickName">
+              <input type="text"class="input-field" placeholder="Email">
+              <input type="password"class="input-field" placeholder="Password">
+              <input type="password"class="input-field" placeholder="Password Check">
+              <br><br><br>
+              <button class="submit"><strong>Register</strong></button>
+            </form>
+          </div>
+        </div>
+        <footer>
+          <div >
+            미개봉 중고팀
+          </div>
+          <div>
+            CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+            Address. 인천광역시 남구 용현1.4동 인하로 100
+          </div>
+        </footer>
+        <script type="text/javascript">
+          var x=document.getElementById("login");
+          var y=document.getElementById("register");
+          var z=document.getElementById("button");
+          function toggleLogin(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0";
+          }
+          function toggleRegister(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+          }
+        </script>
+    </div>
+</body>
+</html>
