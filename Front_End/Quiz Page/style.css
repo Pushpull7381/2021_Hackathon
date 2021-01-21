@@ -1,0 +1,262 @@
+.header{
+  background-color: #FFFFFF;
+
+  display:flex;
+  width:100%;
+  margin: auto;
+  height: 81px;
+}
+a{
+  text-decoration: none;
+}
+#imim{
+  margin-left:2%;
+}
+.nav> li >a>img{
+  padding-top: 15px;
+}
+li{
+  margin-left:1%;
+}
+.searchArea>form>span>a>img{
+  margin-top: 10%;
+  width:100%;
+  height: auto;
+  display: inline-block;
+}
+.nav{
+  display: flex;
+  justify-content: flex-end;
+  line-height: 86px;
+  opacity: 0.4;
+  list-style: none;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 45%;  /*level~~ 조절*/
+}
+#login{
+  margin-left: 10%;
+}
+.nav > li{
+  margin-left: 50px;
+}
+.nav >li>a{
+  color: #707070;
+}
+.nav>li>a:hover {
+    color:#79FF86;
+}
+
+
+/*header*/
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+  }
+  #right-answers, #all-questions{
+    display: none;
+  }
+  body {
+    font-family: sans-serif;
+    background-color: rgb(244, 244, 244);
+    margin:0;
+  }
+  #sf{
+    width:50%;
+  }
+  #lines{
+    font-family: sans-sefif;
+    font-size: 3vw; /*축하합니다~~~부분 글씨크기*/
+    font-weight: bolder;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align-last: center;
+    margin: 0% 10%;
+    max-width: 100%;
+    height: 100%;
+
+  }
+  
+  .block{
+    width: 100%;
+  }
+  
+  
+  .content {
+    box-shadow: 0.1vw 0.1vw 0.1vw 0.1vw rgba(216, 216, 216, 0.5);
+    border-width: 1vw 1vw 1vw 1vw;
+    color: rgb(80, 80, 80);
+    margin-top: 0%;
+    /* height: auto; */
+    background-color: #fafafa;
+    position: relative;
+  }
+  
+  
+  p.main-text {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    line-height: 1.6em;
+    word-spacing: 0.3em;
+    color: rgb(75, 75, 75);
+    font-size: 16px;
+  }
+  
+  h1{
+    font-size:5vw;
+  }
+  .percent {
+    margin-top: 7px;
+  }
+  
+  #final {
+    font-size: 5vw;
+    color: green;
+    margin-bottom: 10px;
+  }
+  .modal-text{
+    font-size: 3vw;
+  }
+  
+  .count {
+    font-weight: bold;
+  }
+  
+  
+  .number-of-question-text {
+    margin-bottom: 1vw; /*question 1 of 5 이부분 글씨*/
+    color: #389D53;
+    font-size: 3vw;
+    font-weight: bold;
+  }
+  
+  .number-of-question-text::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border: 1px solid rgb(230, 230, 230);
+    margin-top: 3vw;
+  
+  }
+  #answer-buttons{ 
+    width: 100%;
+
+   }
+
+
+  .wrapper {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    margin: 1% 15%;
+  
+  }
+  
+  #question-container {
+    margin-top: 10%;
+  }
+  
+  #question {
+    font-size: 3vw;
+    margin-top : 3vw;
+    margin-bottom: 4vw;
+    font-weight: bold;
+    line-height: 27px;
+    color: #7F7F7F;
+
+  }
+  
+  .btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    border: 0.1vw solid #7F7F7F;
+    color:#7F7F7F;
+    font-weight: bold;
+    padding: 2vw 2vw;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 3vw; /*보기글자 크기*/
+    text-align: left;
+    border-radius: 0.5vw;
+    line-height: 3vw;
+    margin:0 auto;
+  }
+  .btn:focus-within{
+    border-color: #79FF86;
+  }
+  
+  .btn:hover {
+    background-color: #91F079;
+  }
+  
+  .btn:not(:first-child) {
+    margin-top: 5vw;
+  }
+  
+  /* .btn.correct {
+    background-color: rgb(0, 126, 48);
+    color: #ffffff;
+  }
+  
+  .btn.wrong {
+    background-color: rgb(197, 59, 59);
+    color: #ffffff;
+  } */
+  
+  /*Prevent multiclicking the buttons*/
+  .no-click {pointer-events: none;}
+  
+  .controls {
+    margin: 20 auto;
+  }
+  .block{
+    padding-bottom: 10%;
+    max-height: 100%;
+  }
+  .start-btn, .next-btn{
+    font-size: 2vw; /*start 글자 크기*/
+    color: #FFFFFF;
+    padding: 3% 10%;
+    margin-top: 20%;
+    /* margin-bottom: 20%; */
+    background-color: #79FF86;
+    border: none;
+    border-radius: 7vw;
+    cursor: pointer;
+    width: 45%;
+
+  }
+  .finish-btn{
+    font-size: 2vw; /*start 글자 크기*/
+    color: #ffffff;
+    padding: 3% 10%;
+    margin-top: 5%;
+    margin-bottom: 20%;
+    background-color: #79FF86;
+    border: none;
+    border-radius: 7vw;
+    cursor: pointer;
+    width: 45%;
+
+  }
+  .start-btn:hover, .next-btn:hover {
+    color: #43a8fa;
+    border-color: #43a8fa;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  
+
+
+  #picture{
+    width: 100%;
+
+  }
