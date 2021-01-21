@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="join.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="title_logo"></div>
+
+            <div class="title">
+                <div style="color:#FF6D6D">K</div>
+                <div style="color:#9F6969">N</div>
+                <div style="color:#F83C3C">O</div>
+                <div style="color:#790808">W</div>
+                <div style="color:white">!</div>
+                <div style="color:#91F079">A</div>
+                <div style="color:#389D53">N</div>
+                <div style="color:#426E45">I</div>
+                <div style="color:#6FE18A">M</div>
+                <div style="color:#5BD9AB">A</div>
+                <div style="color:#178455">L</div>
+            </div>
+            <ul class="nav">
+                <li><a href="learn.html">LEARN</a></li>
+                <li><a href="level.html">LEVEL</a></li>
+                <li><a href="notice.html">NOTICE</a></li>
+                <li><a href="community.html">COMMUNITY</a></li>
+                <ul class="login_wrap">
+                    <li class="login"><a href="join.html" style="color:#79FF86">LOGIN</a></li>
+                    <li class="login_img"><a href="profile.html"></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="banner">
+            <div>
+              JOIN
+            </div>
+        </div>
+        <div class="box">
+          <div class="form">
+            <div class="button-from">
+              <div id="button"></div>
+              <button class="toggleButton" onclick="toggleLogin()">
+              <strong>LOGIN</strong></button>
+              <button class="toggleButton" onclick="toggleRegister()">
+              <strong>REGISTER</strong></button>
+            </div>
+            <div class="title" >
+                <div style="color:#FF6D6D">K</div>
+                <div style="color:#9F6969">N</div>
+                <div style="color:#F83C3C">O</div>
+                <div style="color:#790808">W</div>
+                <div style="color:white">!</div>
+                <div style="color:#91F079">A</div>
+                <div style="color:#389D53">N</div>
+                <div style="color:#426E45">I</div>
+                <div style="color:#6FE18A">M</div>
+                <div style="color:#5BD9AB">A</div>
+                <div style="color:#178455">L</div>
+            </div>
+            <form id="login" class="input-group">
+              <input type="text"class="input-field" placeholder="Your Email">
+              <input type="password"class="input-field" placeholder="Your Password">
+              <input type="checkbox" class="checkbox">        <span>Remember Password</span>
+              <button class="submit"><strong>LOGIN</strong></button>
+            </form>
+            <form id="register" class="input-group">
+              <input type="text"class="input-field" placeholder="ID">
+              <input type="text"class="input-field" placeholder="Name">
+              <input type="text"class="input-field" placeholder="NickName">
+              <input type="text"class="input-field" placeholder="Email">
+              <input type="text"class="input-field" placeholder="Password">
+              <input type="text"class="input-field" placeholder="Password Check">
+              <button class="submit"><strong>Register</strong></button>
+            </form>
+          </div>
+        </div>
+        <script type="text/javascript">
+          var x=document.getElementById("login");
+          var y=document.getElementById("register");
+          var z=document.getElementById("button");
+          function toggleLogin(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0";
+          }
+          function toggleRegister(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+          }
+        </script>
+    </div>
+</body>
+</html>

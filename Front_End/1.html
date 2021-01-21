@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community</title>
+    <link rel="stylesheet" href="1.css"/>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="title_logo"></div>
+
+            <div class="title">
+                <div style="color:#FF6D6D">K</div>
+                <div style="color:#9F6969">N</div>
+                <div style="color:#F83C3C">O</div>
+                <div style="color:#790808">W</div>
+                <div style="color:white">!</div>
+                <div style="color:#91F079">A</div>
+                <div style="color:#389D53">N</div>
+                <div style="color:#426E45">I</div>
+                <div style="color:#6FE18A">M</div>
+                <div style="color:#5BD9AB">A</div>
+                <div style="color:#178455">L</div>
+            </div>
+
+
+            <ul class="nav">
+                <li><a href="learn.html">LEARN</a></li>
+                <li><a href="#">LEVEL</a></li>
+                <li><a href="#">NOTICE</a></li>
+                <li><a href="community.html" style="color:#79FF86">COMMUNITY</a></li>
+                <ul class="login_wrap">
+                    <li class="login"><a href="#">LOGIN</a></li>
+                    <li class="login_img"><a href="#"></a></li>
+                </ul>
+            </ul>
+
+        </div>
+
+        <div class="banner">
+            <div>
+                community
+            </div>
+        </div>
+
+
+        <div class="back">
+            <div class="main">
+                <div class="board_list_wrap">
+                    <table class="board_list">
+                        <thead>
+                            <tr>
+                                <th>NO.</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                      <tr>
+                                <td>0</td>
+                                <td><form name="frm0" action="community_text.html" method="post">
+                                  <input type="hidden" name="idx" value="0">
+                                </form>
+                                    <a href="#" onclick="javascript:document.frm0.submit();">Happy Birthday Dayeon!!!</a>
+                                </td>
+                                <td>everyone</td>
+                                <td>2021-01-20 01:19:49</td>
+                            </tr>
+                            <tr>
+                                                          <tr>
+                                <td>1</td>
+                                <td><form name="frm0" action="community_text.html" method="post">
+                                  <input type="hidden" name="idx" value="1">
+                                </form>
+                                    <a href="#" onclick="javascript:document.frm0.submit();">Untitled2</a>
+                                </td>
+                                <td>admin2</td>
+                                <td>2021-01-19 22:17:23</td>
+                            </tr>
+                            <tr>
+                                                          <tr>
+                                <td>2</td>
+                                <td><form name="frm0" action="community_text.html" method="post">
+                                  <input type="hidden" name="idx" value="2">
+                                </form>
+                                    <a href="#" onclick="javascript:document.frm0.submit();">Untitled</a>
+                                </td>
+                                <td>admin</td>
+                                <td>2021-01-19 22:10:10</td>
+                            </tr>
+                            <tr>
+
+
+                        </tbody>
+                    </table>
+                    <div class="page">
+                        <div class="paging">
+                            <a href="#">이전</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">다음</a>
+                        </div>
+                        <div class="writing">
+                            <input id="button_w" type="button" value="작성하기" onclick="location.href='community_writing.html'">
+                        </div>
+                    </div>
+                    <div class="search">
+                        <form action="board.php">
+                            <select name="search">
+                              <option value="title">제목</option>
+                              <option value="description">내용</option>
+                              <option value="title_description">제목 + 내용</option>
+                              <option value="id">ID</option>
+                            </select>
+                            <input type="text" cols="20" name="content">
+                            <input type="submit" value="검색" id="button_s">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
