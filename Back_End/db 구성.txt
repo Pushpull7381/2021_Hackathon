@@ -28,7 +28,8 @@ create table users(
   nickname varchar(20) not null,
   pw varchar(20) not null,
   email varchar(30) not null,
-  rand not null default '0',
+  rand int(11) not null default '0',
+  point int(11) not null default '0',
   primary key(idx)
 );
 

@@ -16,7 +16,7 @@ $sql="
 $result=mysqli_query($conn, $sql);
 $result=mysqli_query($conn, "select * from comment where read_num='{$idx}';");
 $row=mysqli_fetch_array($result);
-
+include 'point_plus_10';
 if($result!=false){
 echo "<script>location.href='community_reading.html?idx=$idx&check=$rand&no=$no';</script>";
 }

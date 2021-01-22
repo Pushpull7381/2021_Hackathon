@@ -5,10 +5,12 @@ include 'connect.php';
 if($_POST['title']==null) {
 	echo "<script>alert(\"제목 조작은 나빠요!\");</script>";
 	echo "<script>window.history.back();</script>";
+	die;
 }
 if($_POST['description']==null) {
 	echo "<script>alert(\"내용 조작은 나빠요!\");</script>";
 	echo "<script>window.history.back();</script>";
+	die;
 }
 
 $sql="
@@ -24,7 +26,7 @@ VALUES(
 )
 ";
 $result=mysqli_query($conn, $sql);
-
+include 'point_plus_10.php';
 if($result==false){
 	echo '다시 써여!';
 	error_log(mysqli_error($conn));

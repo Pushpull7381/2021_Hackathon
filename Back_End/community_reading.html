@@ -6,6 +6,9 @@ $rand=$_GET['check'];
 $no=$_GET['no'];
 $result=mysqli_query($conn, "select * from topic where num='{$idx}' and rand='{$rand}';");
 $row=mysqli_fetch_array($result);
+$user_id=$row['user_id'];
+$result=mysqli_query($conn, "select * from users where id='{$user_id}';");
+$roww=mysqli_fetch_array($result);
 
 ?>
 <html lang="en">
@@ -97,6 +100,11 @@ Community
 </tr>
 <tr>
 <td id="text">
+        <b style="color:#000000;">포인트&nbsp&nbsp</b> <?php echo $roww['point']; ?>
+</td>
+</tr>
+<tr>
+<td id="text">
 	<b style="color:#000000;">작성 시간&nbsp&nbsp</b> <?php echo $row['created']; ?>
 </td>
 </tr>
@@ -105,6 +113,7 @@ Community
 	<b style="color:#000000;">내용</b><br><br><?php echo $row['description'];?>
 </td>
 </tr>
+
 <tr>
 	<td  style="border-bottom: nonep">
 	&nbsp	<a href="#" onclick="document.forms['edit'].submit();">수정하기</a>
