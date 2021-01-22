@@ -1,0 +1,133 @@
+<?php
+  session_start();
+  $id=$_SESSION['id'];
+
+?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn_Law</title>
+    <link rel="stylesheet" href="css/learn.css"/>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body>
+
+  <div class="container">
+  <div class="header">
+  <div class="searchArea">
+  <form>
+  <span><a href="home.html"><img src="../image2/Logo.PNG"></a></span>
+  </form>
+  </div>
+  <ul class="nav">
+  <li id="learn"><a href="learn.html">LEARN</a></li>
+  <li><a href="level_page.html">LEVEL</a></li>
+  <li><a href="notice.html">NOTICE</a></li>
+  <li><a href="community.html">COMMUNITY</a></li>
+  <?php
+  if(!($_SESSION['name'])){
+  ?>
+  <li id="login"><a href="join.html">LOGIN</a></li>
+
+  <?php
+  }
+  else {
+  ?>
+  <li><a href="logout.php">LOGOUT</a></li>
+  <li style="margin-left:20px; width:60px;"><?php
+  echo $_SESSION['name'];
+  ?>
+  </li><?php } ?>
+  <li style="margin-left:1%;">
+    <a href="Profile.html"><img src="../image/Profile-ICon.png"></a></li>
+
+  </ul>
+  </div>
+
+        <div class="banner">
+            <div>
+                Learn
+            </div>
+        </div>
+        <div class="back">
+            <div class="main">
+                <div class="board_list_wrap">
+                    <table class="board_list">
+                        <thead>
+				<th style="text-align: center;">반려견과 관련된 법과 벌금</th>
+
+                        </thead>
+
+			<tbody>
+                            <tr>
+                                <td style="border-bottom: none;   font-size: 18px;">
+			<a style="color:#FA5858">★ 반려견과 관련 사항을 지키지 않았을 때의 과태료</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="flex" style="padding: 30px;">
+                        <div class="all" style="padding-top: 0; padding-left: 5%;">
+                            <div class="pic2" style="background-image: url('../img/abandoned_dog.png'); height: 300px;">
+                            </div>
+                            <div class="small_title" style="text-align: center;">
+				    <br> 유기
+                            </div>
+                            <div class="small_text" style="text-align: center;">
+                                <br>
+                                자신의 반려견을 무단으로 유기할 경우에는 법적인 문제를 물어야 합니다.
+                                구체적으로는 반려견을 유기한 사람에게 300만원 이하의 과태료를 부여하게 됩니다.
+                                따라서 반려견을 유기하지 말아야 합니다.
+
+                        </div>
+                      </div>
+
+                        <div class="all" style="padding-top: 0;padding-left: 5%;">
+                            <div class="pic2" style="background-image: url('../img/ward_office.png'); height:300px">
+                            </div>
+                            <div class="small_title" style="text-align: center;">
+				    <br> 반려견 등록
+                            </div>
+                            <div class="small_text" style="text-align: center;">
+                                <br>
+                                자신의 반려견을 구청에 등록하지 않았을 경우에는 법적인 책임을 져야 합니다. <br>구체적으로는 반려견을
+                                등록하지 않은 <br>당사자에게 60만원 이하의 과태료를<br> 부여합니다. 따라서 반드시 자신의 반려견을 구청에 등록해야합니다.
+                            </div>
+                        </div>
+
+			<div class="all" style="padding-top: 0; padding-left: 5%;">
+				<div class="pic2" style="background-image: url('../img/dog_tag.png'); height:300px">
+				</div>
+				<div class="small_title" style="text-align: center;">
+					<br>인식
+				</div>
+				<div class="small_text" style="text-align: center;">
+					<br>
+          자신의 반려견 인식표에 들어가야 될<br> 정보엔 첫번째로 소유자의 성명,<br> 두번째로 소유자의 전화번호,<br> 세번째로 동물등록번호가 있습니다. <br>
+          자신의 반려견 인식표에 위의 정보를 <br>기록하지 않았을 땐 20만원 이하의 <br>과태료를 부여받을 수 있습니다.
+				</div>
+			</div>
+		    </div>
+		    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+		    <div style="margin-left:90%; margin-top: 150px;">
+			    <input id="button_w" type="button" value="목록으로" onclick="location.href='learn.html'">
+		    </div>
+
+	</div>
+
+        </div>
+
+    </div>
+    <footer>
+	              <div >
+			                  미개봉 중고팀
+					            </div>
+			                <div>
+						            CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+							                Address. 인천광역시 남구 용현1.4동 인하로 100
+									          </div>
+										          </footer>
+</body>
+</html>

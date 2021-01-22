@@ -1,0 +1,200 @@
+<?php
+session_start();
+include 'connect.php';
+$idx=$_GET['idx'];
+$rand=$_GET['check'];
+$no=$_GET['no'];
+$result=mysqli_query($conn, "select * from topic where num='{$idx}' and rand='{$rand}';");
+$row=mysqli_fetch_array($result);
+
+?>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Community Text</title>
+		<link rel="stylesheet" href="css/community_reading.css"/>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/header.css">
+<style>
+	tr>td>a{
+		margin-left:11vw;
+			text-decoration: overline underline;
+	}
+      tbody>tr>td>a:hover{
+                background-color: #F8E0E6;
+        }
+	tbody>tr>td>div>a:hover{
+		background-color: #F8E0E6;
+	}
+</style>                        
+	</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="searchArea">
+				<form>
+					<span><a href="home.html"><img src="../image2/Logo.PNG"></a></span>
+				</form>
+			</div>
+			<ul class="nav">
+				<li id="learn"><a href="learn.html">LEARN</a></li>
+				<li><a href="level_page.html">LEVEL</a></li>
+				<li><a href="notice.html">NOTICE</a></li>
+				<li><a href="community.html">COMMUNITY</a></li>
+			<?php
+			if(!($_SESSION['name'])){
+	   ?>
+	   <li id="login"><a href="join.html">LOGIN</a></li>
+
+				<?php
+			}
+			else {
+			?>
+			<li><a href="logout.php">LOGOUT</a></li>
+			<li style="margin-left:20px; width:60px;"><?php
+				echo $_SESSION['name'];
+				?>
+			</li><?php } ?>
+			<li style="margin-left:1%;">
+
+				<a href="Profile.html"><img src="../image/Profile-ICon.png"></a></li>
+
+			</ul>
+		</div>
+		</div>
+
+<div class="banner">
+<div>
+Community
+</div>
+</div>
+<div class="back">
+<div class="main">
+<div class="board_list_wrap">
+<table class="board_list">
+<thead>
+<th>COMMUNITY 글 읽기</th>
+
+</thead>
+
+<tbody>
+<tr>
+<td id="text">
+	<b style="color:#000000;">No.&nbsp</b> <?php echo $_GET['no']; ?>
+</td>
+</tr>
+
+<tr>
+<td id="text">
+	<b style="color:#000000;">제목&nbsp&nbsp</b><?php echo $row['title']; ?>
+</td>
+</tr>
+<tr>
+<td id="text">
+	<b style="color:#000000;">닉네임&nbsp&nbsp</b> <?php echo $row['nickname']; ?>
+</td>
+</tr>
+<tr>
+<td id="text">
+	<b style="color:#000000;">작성 시간&nbsp&nbsp</b> <?php echo $row['created']; ?>
+</td>
+</tr>
+<tr>
+<td id="text_title">
+	<b style="color:#000000;">내용</b><br><br><?php echo $row['description'];?>
+</td>
+</tr>
+<tr>
+	<td  style="border-bottom: nonep">
+	&nbsp	<a href="#" onclick="document.forms['edit'].submit();">수정하기</a>
+		<a href="#" onclick="document.forms['delete'].submit();">삭제하기</a>
+		<a href="#" onclick="document.forms['back'].submit();">목록으로</a>
+	</td>   
+</tr>
+<tr>
+	<td><b style="color:#ff8282">댓글보기</b></td>
+</tr>
+<tr>
+<td>
+<?php
+$sql="select * from comment where read_num='{$idx}';";
+$result=mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_array($result)){
+
+?>
+<div><b style="color:#000000;"><?php echo $row['cmt_name'];?></b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row['cmt_created']; ?></div>
+<div><?php echo $row['cmt_description']; ?></div>
+<?php 
+$cmt_num=$row['cmt_num'];
+$read_num=$row['read_num'];
+$cmt_id=$row['cmt_id'];
+	?>
+<div><?php echo "<a style='margin-left:53vw' href='delete_comment.php?cmt_idx=$cmt_num&idx=$read_num&cmt_id=$cmt_id'>삭제하기</a>";?></div>
+<form name="delete_comment" action="delete_comment.php" method="post">
+	<input type="hidden" name="cmt_idx" value="<?=$row['cmt_num']?>">
+	<input type="hidden" name="idx" value="<?=$row['read_num']?>">
+	<input type="hidden" name="cmt_id" value="<?=$row['cmt_id']?>">
+</form>
+
+<?php
+echo "<p>";
+}
+?>
+
+</td>
+</tr>
+<tr><?php
+if(isset($_SESSION['id'])) {
+				    ?>
+				    <td><b style="color:#ff8282; border-bottom: none;">댓글작성</b><br></td></tr><tr><td>
+
+	<form name="comment"action="read_comment.php" method="post">
+	<textarea style="resize: none;"rows="3" placeholder=" 비방이나 욕설은 삼가해주세요!"cols="152" required name="comment"></textarea>
+<input type="hidden" name="idx" value="<?=$idx?>">
+<input type="hidden" name="check" value="<?=$rand?>">
+<input type="hidden" name="no" value="<?=$no?>">
+</form><br>
+<a  style="margin-left:53vw; text-decoration: overline underline;"href="#" onclick="document.forms['comment'].submit();">댓글작성</a>
+
+</td>
+<?PHP
+}
+?>
+</tr><br>
+<form name="edit"action="community_edit.html" method="post">
+	<input type="hidden" name="idx" value="<?=$idx?>">
+	<input type="hidden" name="check" value="<?=$rand?>">
+	<input type="hidden" name="no" value="<?=$no?>">
+	<input type="hidden" name="user_id"_check value="<?=$row['user_id']?>">
+	<input type="hidden" name="id_idx" value="<?=$roww['idx']?>">
+</form>
+<form name="back" action="community.html" method="post">
+</form>
+<form name="delete" action="delete.php" method="post">
+	<input type="hidden" name="idx" value="<?=$idx?>">
+	<input type="hidden" name="check" value="<?=$rand?>">
+</form>
+</tbody>
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+  <footer>
+	            <div >
+			                미개봉 중고팀
+					          </div>
+			              <div>
+					                  CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+							              Address. 인천광역시 남구 용현1.4동 인하로 100
+								                </div>
+										        </footer>
+</body>
+</html>

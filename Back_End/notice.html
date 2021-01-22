@@ -1,0 +1,127 @@
+<?php
+  session_start();
+  $id=$_SESSION['id'];
+?>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notice</title>
+    <link rel="stylesheet" href="css/notice.css"/>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+        <div class="searchArea">
+        <form>
+        <span><a href="home.html"><img src="../image2/Logo.PNG"></a></span>
+        </form>
+        </div>
+        <ul class="nav">
+        <li id="learn"><a href="learn.html">LEARN</a></li>
+        <li><a href="level_page.html">LEVEL</a></li>
+        <li><a href="notice.html">NOTICE</a></li>
+        <li><a href="community.html">COMMUNITY</a></li>
+        <?php
+        if(!($_SESSION['name'])){
+        ?>
+        <li id="login"><a href="join.html">LOGIN</a></li>
+
+        <?php
+        }
+        else {
+        ?>
+        <li><a href="logout.php">LOGOUT</a></li>
+        <li style="margin-left:20px; width:60px;"><?php
+        echo $_SESSION['name'];
+        ?>
+        </li><?php } ?>
+        <li style="margin-left:1%;">
+          <a href="Profile.html"><img src="../image/Profile-ICon.png"></a></li>
+
+        </ul>
+        </div>
+
+
+        <div class="banner">
+            <div>
+                Notice
+            </div>
+        </div>
+        <div class="back">
+            <div class="main">
+                <div class="board_list_wrap">
+                    <table class="board_list">
+                        <thead>
+                            <th style="text-align: center; font-size:50px;">NOTICE</th>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border-bottom: none; color:#ff8282; font-size: 18px;">
+					"KNOW ANIMAL" 소개
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 2%; margin-left:3%; float:left;">
+
+                        <div class="small_text">
+                            농림축산식품부가 22일 발표한 ‘2018년 반려동물 보호ㆍ복지 실태조사 결과’에 따르면 반려동물을 또 하나의 가족처럼 여긴다는
+                            ‘펫팸’(Pet+Family)이라는 말이 일반화할 정도로 반려동물을 키우는 사람은 꾸준히 늘고 있는 추세입니다.
+                            하지만 이같은 변화 뒤에는 많은 반려동물들이 파양되고 길거리에 버려지는 어두운 그늘도 함께 드리워지고 있습니다.
+                            지난해 구조ㆍ보호된 유기ㆍ유실 동물은 12만 1077마리로 전년대비 18% 증가했습니다. 이와 같은 일의 원인 중 하나는 바로 반려동물을 키우는 사람들의 인식입니다.
+                            서울연구원의 조사에 따르면, 국내 반려동물과 함께 사는 인구 중 사육지식을 습득하지 않고 입양을 한 경우가 전체의 24%에 달하는 것으로 조사되었습니다.
+                            ([출처: 중앙일보] '펫팸'시대의 그늘…유실·유기동물 12만마리 사상 최대)
+
+                        </div>
+
+                    </div>
+                    <div style="margin-top: 1%; margin-left:3%; float:left;">
+
+                        <div class="small_text">
+                            한편, 독일 니더작센주(州)는 2011년 반려견을 키우는 데 필요한 자격증 제도를 도입했습니다.
+                            입양 전 이론 및 실습 시험을 통해 자격증을 발급합니다. 자격증 시험에서는
+                            동물에 대한 상식과 관련법 숙지, 돌발 상황 대처 등을 평가받습니다.
+                            독일 뿐만 아니라 유럽 등 여러 국가에서는 사전의 반려동물 관련 교육을 통해서
+                            반려동물을 키우는 사람들의 인식과 상식을 기르고 있습니다.
+
+                        </div>
+
+                    </div>
+                    <div style="margin-top: 1%; margin-left:3%; float:left;">
+
+                        <div class="small_text">
+                            우리 나라도 이와 같은 인식의 개선이 이루어진다면 반려동물과 키우는 사람 모두가 행복해질 수 있지 않을까요?
+                            이와 같은 취지로 시작된 저희 "KNOW ANIMAL"은 반려동물 관련 교육을 퀴즈를 통해서 재미있고 쉽게 접근할 수 있도록 제작된 사이트입니다.
+			    <b> <a href="learn.html" style="font-size: 25px; color:#ff8282">"Learn"</a></b>에서 반려동물에 대한 기초적인 지식을 쌓아
+			    <b><a href="level_page.html" style="color:#ff8282">"Level"</a></b>에서 퀴즈를 풀고
+			    <b><a href="community.html" style="color:#ff8282">"Community"</a></b>에서 많은 사람들과 소통해보세요!
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <footer>
+            <div >
+              미개봉 중고팀
+            </div>
+            <div>
+              CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+              Address. 인천광역시 남구 용현1.4동 인하로 100
+            </div>
+          </footer>
+    </div>
+</body>
+</html>

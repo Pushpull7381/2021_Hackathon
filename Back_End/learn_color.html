@@ -1,0 +1,133 @@
+<?php
+  session_start();
+  $id=$_SESSION['id'];
+
+?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn_Color</title>
+    <link rel="stylesheet" href="css/learn.css"/>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body>
+
+  <div class="container">
+  <div class="header">
+  <div class="searchArea">
+  <form>
+  <span><a href="home.html"><img src="../image2/Logo.PNG"></a></span>
+  </form>
+  </div>
+  <ul class="nav">
+  <li id="learn"><a href="learn.html">LEARN</a></li>
+  <li><a href="level_page.html">LEVEL</a></li>
+  <li><a href="notice.html">NOTICE</a></li>
+  <li><a href="community.html">COMMUNITY</a></li>
+  <?php
+  if(!($_SESSION['name'])){
+  ?>
+  <li id="login"><a href="join.html">LOGIN</a></li>
+
+  <?php
+  }
+  else {
+  ?>
+  <li><a href="logout.php">LOGOUT</a></li>
+  <li style="margin-left:20px; width:60px;"><?php
+  echo $_SESSION['name'];
+  ?>
+  </li><?php } ?>
+  <li style="margin-left:1%;">
+    <a href="Profile.html"><img src="../image/Profile-ICon.png"></a></li>
+
+  </ul>
+  </div>
+
+        <div class="banner">
+            <div>
+                Learn
+            </div>
+        </div>
+        <div class="back">
+            <div class="main">
+                <div class="board_list_wrap">
+                    <table class="board_list">
+                        <thead>
+				<th style="text-align: center;">반려견과 관련된 건강과 질병</th>
+
+                        </thead>
+
+			<tbody>
+                            <tr>
+                                <td style="border-bottom: none;   font-size: 18px;">
+			<a style="color:#FA5858">★ 반려견의 토 색깔에 따른 건강 체크</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="flex" style="padding: 30px;">
+                        <div class="all" style="padding-top: 0; padding-left: 5%;">
+                            <div class="pic2" style="background-image: url('../img/yellow.png'); height: 300px;">
+                            </div>
+                            <div class="small_title" style="text-align: center;">
+				    <br> 노란색
+                            </div>
+                            <div class="small_text" style="text-align: center;">
+                                <br>
+                                반려견의 공복시간이 너무 길어질 경우,<br> 몸에서 일정시간에 위액이 나와 자극이 <br>되어서 거품과 함께 구토를 합니다. 따라서
+                                자신의 반려견 구토 색깔이 노란색일 경우 공복시간이 너무 길어서 생긴 원인이므로 적절한 음식과 사료를 주어야 합니다.
+			    </div>
+			 </div>
+
+
+                        <div class="all" style="padding-top: 0;padding-left: 5%;">
+                            <div class="pic2" style="background-image: url('../img/pink.png'); height:300px">
+                            </div>
+                            <div class="small_title" style="text-align: center;">
+				    <br> 분홍색
+                            </div>
+                            <div class="small_text" style="text-align: center;">
+                                <br>
+                                반려견이 분홍색 액체를 토했을 때는 입,<br> 목, 식도, 위, 십이지장 등의 소화기관 내에 상처가 있어 소량의
+                                출혈이 일어났을 <br>경우가 많다고 합니다. 따라서 자신의 <br>반려견이 구토를 한다면
+                                색깔을 확인하고 분홍색의 구토를 지속적으로 한다면, 반드시 병원에 데려가서 확인을 받아야 합니다.
+                            </div>
+                        </div>
+
+			<div class="all" style="padding-top: 0; padding-left: 5%;">
+				<div class="pic2" style="background-image: url('../img/green.png'); height:300px">
+				</div>
+				<div class="small_title" style="text-align: center;">
+					<br>초록색
+				</div>
+				<div class="small_text" style="text-align: center;">
+					<br>
+          반려견이 초록색의 액체를 토했을떄는<br> 산책 중에 잔디나 풀을 먹고 간식으로 <br>야채류를 섭취하게 되거나,
+          췌장의 문제가 있는 경우입니다. 따라서 자신의 반려견이 초록색의 구토를 한다면,
+          반려견이 무엇을 섭취했는지 확인하고 의심가는 물질을 <br>섭취하지 않았을 때에는 반드시 <br>병원에 데려가야합니다.
+				</div>
+			</div>
+		    </div>
+		    <br><br><br><br><br><br><br><br><br><br><br><br>
+		    <div style="margin-left:90%; margin-top: 150px;">
+			    <input id="button_w" type="button" value="목록으로" onclick="location.href='learn.html'">
+		    </div>
+
+	</div>
+
+        </div>
+
+    </div>
+    <footer>
+	              <div >
+			                  미개봉 중고팀
+					            </div>
+			                <div>
+						            CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+							                Address. 인천광역시 남구 용현1.4동 인하로 100
+									          </div>
+										          </footer>
+</body>
+</html>

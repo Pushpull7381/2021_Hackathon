@@ -1,0 +1,109 @@
+<?php
+session_start();
+if($_SESSION['id']!=null) {
+echo "<script>alert(\"이미 로그인을 하셨습니다~\");</script>";
+echo "<script>location.href='home.html';</script>";
+}
+else {
+?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/join.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div style="width:100%; height:100%;" class="searchArea">
+				<form>
+					<span><a href="home.html"><img src="../image2/Logo.PNG"></a></span>
+				</form>
+			</div>
+			<ul class="nav">
+				<li id="learn"><a href="learn.html">LEARN</a></li>
+				<li><a href="level_page.html">LEVEL</a></li>
+				<li><a href="notice.html">NOTICE</a></li>
+				<li><a href="community.html">COMMUNITY</a></li>
+				<?php
+				if(!($_SESSION['name'])){
+				?>
+				<li id="login"><a href="join.html">LOGIN</a></li>
+
+				<?php
+				}
+				else {
+				?>
+				<li><a href="logout.php">LOGOUT</a></li>
+				<li style="margin-left:20px; width:60px;"><?php
+	   				echo $_SESSION['name'];
+				   ?>
+				</li><?php } ?>
+				<li style="margin-left:1%;">
+					  <a href="Profile.html"><img src="../image/Profile-ICon.png"></a></li>
+
+			</ul>
+		</div>
+	<div class="banner">
+            <div>
+              JOIN
+            </div>
+        </div>
+          <div class="form">
+            <div class="button-from">
+              <div id="button"></div>
+              <button class="toggleButton" onclick="toggleLogin()">
+              <strong>LOGIN</strong></button>
+              <button class="toggleButton" onclick="toggleRegister()">
+              <strong>REGISTER</strong></button>
+            </div>
+            <form id="login2" style="left:50px;" class="input-group"  method="POST" action="login_check.php">
+              <input type="text"class="input-field" name="id" maxlength="10" required placeholder="Your ID">
+              <input type="password"class="input-field" name="pw" required placeholder="Your Password">
+	      <br><br>
+              <button class="submit"><strong>LOGIN</strong></button>
+            </form>
+            <form id="register" class="input-group" method="POST" action="register_check.php">
+	      <input type="text" class="input-field" name="ID" maxlength="10" required placeholder="Your ID">
+              <input type="text"class="input-field" required maxlength="5" name="name" placeholder="Your Name">
+              <input type="text"class="input-field" name="nickName" maxlength="10"required  placeholder="Your NickName">
+              <input type="text"class="input-field" name="Email" required  placeholder="Your Email">
+              <input type="password"class="input-field" name="pw" required  placeholder="Your Password">
+	      <input type="password"class="input-field" name="pw_check"  required placeholder="Your Password">
+	      <br><br>
+	      <button class="submit"><strong>Register</strong></button>
+            </form>
+          </div>
+        <script type="text/javascript">
+          var x=document.getElementById("login2");
+          var y=document.getElementById("register");
+          var z=document.getElementById("button");
+          function toggleLogin(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0";
+          }
+          function toggleRegister(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+          }
+        </script>
+	  <footer>
+		            <div >
+				                미개봉 중고팀
+						          </div>
+				              <div>
+						                  CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+								              Address. 인천광역시 남구 용현1.4동 인하로 100
+									                </div>
+											        </footer>
+    </div>
+</body>
+</html>
+<?php
+
+		}
+		?>

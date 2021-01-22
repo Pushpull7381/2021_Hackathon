@@ -3,12 +3,13 @@ create table comment(
   cmt_num int(11) not null auto_increment,
   cmt_id varchar(20) not null,
   cmt_name varchar(20) not null,
-  cmt_description varchar(100) not null,
+  cmt_description text not null,
   cmt_created datetime not null default current_timestamp,
   read_num varchar(20) null,
   cmt_rand int(11) not null,
   primary key(cmt_num)
   );
+
 [topic]
 create table topic(
   num int(11) not null auto_increment,
@@ -18,6 +19,7 @@ create table topic(
   user_id varchar(20) not null,
   primary key(num)
 );
+
 [users]
 create table users(
   idx int(11) not null auto_increment,
@@ -28,4 +30,13 @@ create table users(
   email varchar(30) not null,
   rand not null default '0',
   primary key(idx)
+);
+
+[scorelog]
+create table scorelog (
+  index_score int(11) NOT NULL AUTO_INCREMENT, 
+  id_score VARCHAR(30) NOT NULL, score INT(11) NOT NULL, 
+  level_score INT(5) NOT NULL, 
+  created_score datetime  not null default '2021-01-01 00:00:00', 
+  primary key(index_score)
 );

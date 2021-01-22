@@ -1,0 +1,165 @@
+<?PHP
+session_start();
+include 'connect.php';
+$idx=1;
+
+
+
+?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community</title>
+    <link rel="stylesheet" href="css/community.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="searchArea">
+				<form>
+					<span><a href="home.html"><img src="../image2/Logo.PNG"></a></span>
+				</form>
+			</div>
+			<ul class="nav">
+				<li id="learn"><a href="learn.html">LEARN</a></li>
+				<li><a href="level_page.html">LEVEL</a></li>
+				<li><a href="notice.html">NOTICE</a></li>
+				<li><a href="community.html">COMMUNITY</a></li>
+			<?php
+		    if(!($_SESSION['name'])){
+		    ?>
+		    <li id="login"><a href="join.html">LOGIN</a></li>
+
+		    <?php
+		     }
+		    else {
+		    ?>
+		    <li><a href="logout.php">LOGOUT</a></li>
+		    <li style="margin-left:20px; width:60px;"><?php
+			echo $_SESSION['name'];
+	     ?>
+		    </li><?php } ?>
+	     <li style="margin-left:1%;"><a href="Profile.html"><img src="../image/Profile-ICon.png"></a></li>
+		</ul>
+
+        </div>
+
+        <div class="banner">
+            <div>
+                Community
+            </div>
+        </div>
+
+
+        <div class="back">
+            <div class="main">
+                <div class="board_list_wrap">
+                    <table class="board_list">
+                        <thead>
+                            <tr>
+                                <td style="width:5%">NO.</th>
+                                <th>제목</th>
+                                <th style="width:13%">작성자</th>
+                                <th style="width:20%">작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?PHP
+                          if(!isset($_GET['start'])) {
+                            $start=0;
+                        }
+                          else  {
+                            $start=(int)$_GET['start'];
+                          }
+                          $idx=$start+1;
+                          $pageNum=10;
+                            $result = mysqli_query($conn, "SELECT * FROM topic ORDER BY num DESC limit $start, $pageNum;");
+                            $pageTotal = mysqli_num_rows($result);
+                            while ($row = mysqli_fetch_array($result)){
+                           $id=$row['num'];
+                          $check=$row['rand'];
+			   ?>
+                            <tr>
+                              <td><?php echo $idx; ?></td>
+                              <td>
+				      <a href="community_reading.html?idx=<?=$row['num']?>&check=<?=$row['rand']?>&no=<?=$idx?>"><?=$row['title']?></a>
+
+                              </td>
+                              <td><?php echo $row['nickname']; ?></td>
+                              <td><?php echo $row['created']; ?></td>
+                            </tr>
+                            <tr>
+                              <?PHP
+                              $idx++;
+                            }
+                            ?>
+
+
+                        </tbody>
+
+                    </table>
+                    <div class="page">
+                        <div class="paging">
+                          <?php
+                          $data = mysqli_query($conn, "SELECT num FROM topic ORDER BY num DESC;");
+                          $num = mysqli_num_rows($data);
+
+                          $page = ($_GET['page'])?$_GET['page']:1;
+                          $list = 10;
+                          $block = 10;
+
+                          $pageNum = ceil($num/$list); // 총 페이지
+                          $blockNum = ceil($pageNum/$block); // 총 블록
+                          $nowBlock = ceil($page/$block);
+
+                          $s_page = ($nowBlock * $block) - 9;
+                          if ($s_page <= 1) {
+                              $s_page = 1;
+                          }
+                          $e_page = $nowBlock*$block;
+                          if ($pageNum <= $e_page) {
+                              $e_page = $pageNum;
+                          }
+			  if($_GET['page']>10){
+			  ?>
+			 <a style="margin-left: -15%;"href="community.html?page=<?=$s_page-1?>&start=<?=($nowBlock-2)*100+90?>">이전</a>
+                          <?php
+			  }
+                          for ($p=$s_page; $p<=$e_page; $p++) {
+			  $nextPage = $block * ($p-1);
+			  ?>
+
+			  <a href="community.html?page=<?=$p?>&start=<?=$nextPage?>"><?=$p?></a>
+
+			  <?php
+                          }
+	if(($_GET['page']<=($pageNum-($pageNum%10)))&& $num>100){
+			 ?>
+			  <a href="community.html?page=<?=$e_page+1?>&start=<?php echo $nextPage+10?>">다음</a>
+			  <?php
+			  }
+	?>
+			</div></div>
+			  <div class="writing">
+                            <input id="button_w" type="button" value="작성하기" onclick="location.href='community_writing.html'">
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+  <footer>
+	            <div >
+			                미개봉 중고팀
+					          </div>
+			              <div>
+					                  CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+							              Address. 인천광역시 남구 용현1.4동 인하로 100
+								                </div>
+										        </footer>
+
+</body>
+</html>

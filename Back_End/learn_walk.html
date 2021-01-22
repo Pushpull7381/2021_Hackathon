@@ -1,0 +1,133 @@
+<?php
+  session_start();
+  $id=$_SESSION['id'];
+?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn_Walk</title>
+    <link rel="stylesheet" href="css/learn.css"/>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="header">
+			<div class="searchArea">
+				<form>
+					<span><a href="home.html"><img src="../image2/Logo.PNG"></a></span>
+				</form>
+			</div>
+			<ul class="nav">
+				<li id="learn"><a href="learn.html">LEARN</a></li>
+				<li><a href="level_page.html">LEVEL</a></li>
+				<li><a href="notice.html">NOTICE</a></li>
+				<li><a href="community.html">COMMUNITY</a></li>
+				<?php
+				if(!($_SESSION['name'])){
+				?>
+				<li id="login"><a href="join.html">LOGIN</a></li>
+
+				<?php
+				}
+				else {
+				?>
+				<li><a href="logout.php">LOGOUT</a></li>
+				<li style="margin-left:20px; width:60px;"><?php
+					echo $_SESSION['name'];
+					?>
+				</li><?php } ?>
+				<li style="margin-left:1%;">
+					  <a href="Profile.html"><img src="../image/Profile-ICon.png"></a></li>
+
+			</ul>
+		</div>
+        <div class="banner">
+            <div>
+                Learn
+            </div>
+        </div>
+        <div class="back">
+            <div class="main">
+                <div class="board_list_wrap">
+                    <table class="board_list">
+                        <thead>
+				<th style="text-align: center;">반려견과 산책 시 유의할 점</th>
+
+                        </thead>
+
+			<tbody>
+                            <tr>
+                                <td style="border-bottom: none;   font-size: 18px;">
+					★반드시 챙겨야 할 것은 <a style="color:#FA5858">색깔표시</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="flex" style="padding: 30px;">
+                        <div class="all" style="padding-top: 0; padding-left: 5%;">
+                            <div class="pic2" style="background-image: url('../img/강아지목줄.png'); height: 300px;">
+                            </div>
+                            <div class="small_title" style="text-align: center;">
+				    <br> <a style="color:#FA5858">목줄</a>
+                            </div>
+                            <div class="small_text" style="text-align: center;">
+                                <br>
+				산책시, 다른 사람들에게 자신의 반려견이<br> 위협적으로 느껴질 수 있기 때문에 반드시 목줄을 착용시켜서
+				<a style="color:#ff8282">반려견을 제재하거나 사고를 방지시킬 수 있습니다.</a><br>또한 반려견을 잃어버릴 가능성을 줄일 수 있습니다.
+				따라서 반려견이 태어나고나서<br> 얼마되지 않았을 때부터 미리 목줄에 대한 적응 훈련을 시켜야 목줄에 대한 두려움을 줄일 수 있습니다.
+                            </div>
+                        </div>
+
+
+                        <div class="all" style="padding-top: 0;padding-left: 5%;">
+                            <div class="pic2" style="background-image: url('../img/입마개.png'); height:300px">
+                            </div>
+                            <div class="small_title" style="text-align: center;">
+				    <br> <a style="color:#FA5858">입마개</a>
+                            </div>
+                            <div class="small_text" style="text-align: center;">
+                                <br>
+                                자신의 반려견이 맹견에 포함되는 경우에는 필수로 입마개를 착용시켜야 합니다.
+                                만약에 입마개를 착용하지 않고 산책을 시킨다면,<div style="color:#ff8282"> 50만원 이하의 과태료를 내야합니다. </div>
+				따라서 반드시 자신의 반려견이<br> 맹견에 포함되는 지를 확인하는 것이 <br>필수적입니다.
+                            </div>
+                        </div>
+
+			<div class="all" style="padding-top: 0; padding-left: 5%;">
+				<div class="pic2" style="background-image: url('../img/pngwing.com.png'); height:300px">
+				</div>
+				<div class="small_title" style="text-align: center;">
+					<br>	비닐봉투
+				</div>
+				<div class="small_text" style="text-align: center;">
+					<br>
+					자신의 반려견과 산책을 할 때,<br> 반려견의 대소변을 담을 수 있는<br>비닐봉투를 챙겨야합니다.
+					<a style="color:#ff8282"><br>몇몇의 공원과 길거리에서는 대소변을 <br>치우지 않는 경우에 과태료를 부과하고<br> 있습니다. </a>
+					그리고 반려견의 대소변은 다른 사람들에게 피해를 줄 수 있습니다.
+				</div>
+			</div>
+		    </div>
+		    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+		    <div style="margin-left:90%; margin-top: 150px;">
+			    <input id="button_w" type="button" value="목록으로" onclick="location.href='learn.html'">
+		    </div>
+
+	</div>
+
+        </div>
+
+    </div>
+    <footer>
+	              <div >
+			                  미개봉 중고팀
+					            </div>
+			                <div>
+						            CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+							                Address. 인천광역시 남구 용현1.4동 인하로 100
+									          </div>
+										          </footer>
+</body>
+</html>

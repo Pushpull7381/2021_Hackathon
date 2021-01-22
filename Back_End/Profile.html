@@ -1,0 +1,134 @@
+<?php
+session_start();
+include 'connect.php';
+$id=$_SESSION['id'];
+if($id==null){
+	echo"<script>alert('로그인해주세요!');</script>";
+	echo "<script>location.replace('join.html');</script>";
+}
+else {
+$result=mysqli_query($conn, "select * from users where id='{$id}';");
+$row=mysqli_fetch_array($result);
+
+
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/Profile.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!--header start-->
+        <div class="header">
+          <div class="searchArea">
+            <form>
+                <span><a href="home.html"><img src="../image3/Logo.PNG"></a></span>
+            </form>
+          </div>
+          <ul class="nav">
+            <li id="learn"><a href="learn.html">LEARN</a></li>
+            <li><a href="level_page.html">LEVEL</a></li>
+            <li><a href="notice.html">NOTICE</a></li>
+            <li><a href="community.html">COMMUNITY</a></li>
+            <li id="login"><a href="logout.php">LOGOUT</a></li>
+            <li><a href="Profile.html"><img src="../image3/Profile-ICon.png"></a></li>
+          </ul>
+        </div>
+        <!--header end-->
+
+        <!--intro start-->
+        <div class="intro_bg">
+        <div class="intro_text">
+          <h1>PROFILE</h1>
+        </div>
+      </div>
+      <!--intro end-->
+
+      <!--main_text0 start-->
+      <div id="bgcolor_change" class="main_text0">
+        <ul class="icons">
+            <li id="profile_li1">
+              <div id="profile_contents1" class="icon_img">
+                <img id="profile_person" src="../image3/people1.png">
+              </div>
+            </li>
+            <li>
+              <div class="icon_img">
+                <div id="profile_contents2" class="icon_img">
+                <br><h2 class="contents2">NAME</h2>
+                <h4 class="contents4">
+                  <?php echo $row['name'];
+		    ?>
+                </h4>
+                <h2 class="contents2">E-mail</h2>
+                <h4 class="contents4">
+			<?php echo $row['email'];?>
+                </h4>
+                <h2 class="contents2">닉네임</h2>
+                <h4 class="contents4">
+                 	<?php echo $row['nickname'];?>
+                </h4>
+                <h2 class="contents2">LEVEL</h2>
+                <h4 class="contents6">
+			<?php echo $row['level'];?>
+                </h4>
+                </div>
+              </div>
+            </li>
+
+          <li>
+            <div class="icon_img">
+		    <?php if($row['level']==0){
+		    ?>
+		    <img id="level1" src="../image3/level1_fail.PNG">
+		    <img id="level2" src="../image3/level2_fail.PNG">
+		    <img id="level3" src="../image3/level3_fail.PNG">
+		    <?php }
+		    else if($row['level']==1){
+		    ?>
+		    <img id="level1" src="../image3/level1_success.PNG">
+		    <img id="level2" src="../image3/level2_fail.PNG">
+		    <img id="level3" src="../image3/level3_fail.PNG">
+		    <?php }
+		    else if($row['level']==2){
+		    ?>
+		    <img id="level1" src="../image3/level1_success.PNG">
+		    <img id="level2" src="../image3/level2_success.PNG">
+		    <img id="level3" src="../image3/level3_fail.PNG">
+		    <?php }
+		    else if($row['level']==3){
+		    ?>
+		    <img id="level1" src="../image3/level1_success.PNG">
+		    <img id="level2" src="../image3/level2_success.PNG">
+		    <img id="level3" src="../image3/level3_success.PNG">
+		    <?php }
+		       ?>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!--main_text0 end-->
+
+      <footer>
+        <div>
+          미개봉 중고팀
+        </div>
+        <div>
+          CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+          Address. 인천광역시 남구 용현1.4동 인하로 100
+        </div>
+      </footer>
+    </div>
+
+
+  </body>
+</html>
+<?php
+			       }
+			       ?>

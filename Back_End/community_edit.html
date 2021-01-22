@@ -1,0 +1,118 @@
+<?php
+session_start();
+include 'connect.php';
+$user_id=$_SESSION['id'];
+$idx=$_POST['idx'];
+$no=$_POST['no'];
+$rand=$_POST['check'];
+$user_idd=$_POST['user_id'];
+$id_idx=$_POST['id_idx'];
+
+if($user_id==null) {
+echo"<script>alert('로그인해주세요!');</script>";
+echo "<script>location.replace('join.html');</script>";
+}
+if($user_idd!=$user_id) {
+	echo "<script>alert(\"수정은 글쓴이만 가능합니다!\");</script>";
+	echo "<script>window.history.back();</script>";
+	die;
+	}
+?>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Community Text</title>
+<link rel="stylesheet" href="css/community_reading.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="searchArea">
+				<form>
+					<span><a href="home.html"><img src="../image2/Logo.PNG"></a></span>
+				</form>
+			</div>
+			<ul class="nav">
+				<li id="learn"><a href="learn.html">LEARN</a></li>
+				<li><a href="level_page.html">LEVEL</a></li>
+				<li><a href="notice.html">NOTICE</a></li>
+				<li><a href="community.html">COMMUNITY</a></li>
+				<?php
+				if(!($_SESSION['name'])){
+				?>
+				<li id="login"><a href="join.html">LOGIN</a></li>
+
+				<?php
+				}
+				else {
+				?>
+				<li><a href="logout.php">LOGOUT</a></li>
+				<li style="margin-left:20px; width:60px;"><?php
+					echo $_SESSION['name'];
+					?>
+				</li><?php } ?>
+				<li style="margin-left:1%;">
+				<a href="Profile.html"><img src="../image/Profile-ICon.png"></a></li>
+
+			</ul>
+		</div>
+
+<div class="banner">
+<div>
+Community
+</div>
+</div>
+<div class="back">
+<div class="main">
+<div class="board_list_wrap">
+<table class="board_list">
+<thead>
+<th>COMMUNITY 글 수정하기</th>
+
+</thead>
+<tbody>
+
+<tr>
+<td style="border-bottom: none;">
+<div class="input_comm">
+<form action="edit.php" method="post">
+	<p><input style="height:40px"type="text" required placeholder=" 제목을 입력해 주세요." cols="20" name="title"></p><br>
+	<p><textarea style="resize: none;"rows="17" cols="152" required name="description"></textarea></p><br>
+	<p><input style="left:87%" type="submit" value="수정하기" id="button_w"></p>
+<input type="hidden" name="idx" value="<?=$idx?>">
+<input type="hidden" name="check" value="<?=$rand?>">
+<input type="hidden" name="no" value="<?=$no?>">
+<input type="hidden" name="user_id"_check value="<?=$$user_id?>">
+<input type="hidden" name="id_idx" value="<?=$id_idx?>">
+
+</form>
+</div>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+  <footer>
+	            <div >
+			                미개봉 중고팀
+					          </div>
+			              <div>
+					                  CEO. 강혜연 곽성현 곽지연 김건탁 전민혜 한다연<br>
+							              Address. 인천광역시 남구 용현1.4동 인하로 100
+								                </div>
+										        </footer>
+</body>
+</html>
